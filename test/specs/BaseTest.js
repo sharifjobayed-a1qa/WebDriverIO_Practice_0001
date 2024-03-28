@@ -1,17 +1,15 @@
 
+import {baseUrl} from '@wdio/config';
 
-export class BaseTest{
-	
-	BaseTest(){
-		before(`Setup the browser`,async()=>{
-			await browser.setWindowSize(1440,900);
-		});
+export class baseTest {
+    constructor() {
+        before(async () => {
+            await browser.setWindowSize(1440, 900);
+            await browser.url(baseUrl);
+        });
 
-		
-
-		after(`End the session`,async()=>{
-			await browser.closeWindow();
-		});
-	}
-
+        after(async () => {
+            await browser.closeWindow();
+        });
+    }
 }
