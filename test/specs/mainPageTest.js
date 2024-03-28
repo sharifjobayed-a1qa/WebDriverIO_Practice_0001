@@ -1,15 +1,21 @@
+import {mainPage} from '../pages/mainPage';
+import {browser} from '@wdio/globals';
 
-import { baseTest } from "../specs/baseTest/";
 
-export class mainPageTest extends baseTest {
-    constructor() {
-        super();
+describe(``,async()=>{
 
-        describe("Test the mainPage", async () => {
-            it("should have the correct title", async () => {
-                const title = await browser.getTitle();
-                console.log("Title:", title);
-            });
-        });
-    }
-}
+    beforeEach(``,async()=>{
+        await browser.setWindowSize(1440,900);
+        await browser.url();
+    });
+
+    afterEach(``,async()=>{
+        await browser.deleteSession();
+    });
+
+    it(``,async()=>{
+        const MP=new mainPage();
+        await MP.clickOnAddRemoveElementLink();
+    });
+
+});
