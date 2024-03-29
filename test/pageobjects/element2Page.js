@@ -17,10 +17,11 @@ class Element2Page{
 		return $(`//*[text()='Hello World!']`);
 	}
 
-	async waitforHelloWorld(){
-		(await this.helloWorldEl).waitForDisplayed({timeout:5000});
-		await expect(this.helloWorldEl).toBe(true);
+	async waitforHelloWorld() {
+		await (await this.helloWorldEl).waitForDisplayed({ timeout: 5000 });
+		await expect(await this.helloWorldEl.isDisplayed()).toBe(true);
 	}
+	
 
 }
 
