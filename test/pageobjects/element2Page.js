@@ -1,5 +1,8 @@
 
 
+import {expect} from '@wdio/globals';
+
+
 class Element2Page{
 
 	get startBtn(){
@@ -8,6 +11,15 @@ class Element2Page{
 
 	async clickStartBtn(){
 		await this.startBtn.click();
+	}
+
+	get helloWorldEl(){
+		return $(`//*[text()='Hello World!']`);
+	}
+
+	async waitforHelloWorld(){
+		(await this.helloWorldEl).waitForDisplayed({timeout:5000});
+		await expect(this.helloWorldEl).toBe(true);
 	}
 
 }

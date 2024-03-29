@@ -15,6 +15,7 @@ describe('My Login application', () => {
         await mainPage.clickDynamicLoadingLink();
         await dynamicallyLoadedPage.clickElement2Link();
         await element2Page.clickStartBtn();
+        await element2Page.waitforHelloWorld();
     });
 });
 
