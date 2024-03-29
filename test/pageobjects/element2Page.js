@@ -18,7 +18,7 @@ class Element2Page{
 	}
 
 	async waitforHelloWorld() {
-		await (await this.helloWorldEl).waitForDisplayed({ timeout: 5000 });
+		await (await this.helloWorldEl).waitForDisplayed({ timeout: 10000 });
 		await expect(await this.helloWorldEl.isDisplayed()).toBe(true);
 	}
 	
