@@ -1,15 +1,26 @@
-import { expect } from '@wdio/globals'
-import LoginPage from '../pageobjects/login.page.js'
-import SecurePage from '../pageobjects/secure.page.js'
 
-describe('My Login application', () => {
-    it('should login with valid credentials', async () => {
-        await LoginPage.open()
 
-        await LoginPage.login('tomsmith', 'SuperSecretPassword!')
-        await expect(SecurePage.flashAlert).toBeExisting()
-        await expect(SecurePage.flashAlert).toHaveTextContaining(
-            'You logged into a secure area!')
-    })
-})
+import {beforeEach,describe,it} from 'mocha';
+import searchPage from '../pageobjects/searchPage.js';
+
+
+beforeEach(`Pre-test setup`,async()=>{
+    await browser.setWindowSize(1440,900);
+    await browser.url(`https://www.wikipedia.org`);
+});
+
+describe('Wikipedia Test',async()=>{
+    
+    it(`Wikipedia file download test`,async()=>{
+
+        await searchPage.printPageTitle();
+        await searchPage.typeSearchContent();
+
+    });
+
+});
+
+// afterEach(async()=>{
+//     await browser.deleteSession();
+// });
 
