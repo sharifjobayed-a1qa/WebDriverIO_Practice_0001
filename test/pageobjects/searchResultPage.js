@@ -19,7 +19,7 @@ class SearchResultPage{
 	}
 
 	get toolsDropDownMenu(){
-		return $(`//div[normalize-space()='General']`);
+		return $(`//*[contains(@id,'p-tb')]//*[contains(@class,'vector-menu-content-list')]`);
 	}
 
 	async checkToolsDropDownMenu(){
