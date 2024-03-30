@@ -18,7 +18,10 @@ describe('Wikipedia Test',async()=>{
         await searchPage.typeSearchContent();
         await searchPage.clickOnTargetResult(0);
 
-        await searchResultPage.checkPageTitle();
+        await searchResultPage.checkPageTitle(`Imran Khan - Wikipedia`);
+        await searchResultPage.clickToolsDropDownArrow();
+        await searchResultPage.clickToolsDropDownArrow();
+        await searchResultPage.clickPdfDownloadLink();
 
     });
 

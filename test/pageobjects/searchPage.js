@@ -26,7 +26,7 @@ class SearchPage{
 	}
 
 	async clickOnTargetResult(searchResultIndex){
-		(await this.searchResultsDropdown).waitForDisplayed(true);
+		(await this.searchResultsDropdown).waitForDisplayed({timeout:10000});
 		await this.searchResults[searchResultIndex].click();
 	}
 
