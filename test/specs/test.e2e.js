@@ -2,6 +2,7 @@
 
 import {beforeEach,describe,it} from 'mocha';
 import searchPage from '../pageobjects/searchPage.js';
+import searchResultPage from '../pageobjects/searchResultPage.js';
 
 
 beforeEach(`Pre-test setup`,async()=>{
@@ -16,6 +17,8 @@ describe('Wikipedia Test',async()=>{
         await searchPage.printPageTitle();
         await searchPage.typeSearchContent();
         await searchPage.clickOnTargetResult(0);
+
+        await searchResultPage.checkPageTitle();
 
     });
 
