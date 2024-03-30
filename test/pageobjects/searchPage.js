@@ -25,6 +25,11 @@ class SearchPage{
 		return $$(`//*[contains(@class,'suggestion-link')]`);
 	}
 
+	async clickOnTargetResult(searchResultIndex){
+		(await this.searchResultsDropdown).waitForDisplayed(true);
+		await this.searchResults[searchResultIndex].click;
+	}
+
 }
 
 export default new SearchPage();

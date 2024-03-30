@@ -15,6 +15,7 @@ describe('Wikipedia Test',async()=>{
 
         await searchPage.printPageTitle();
         await searchPage.typeSearchContent();
+        await searchPage.clickOnTargetResult(0);
 
     });
 
