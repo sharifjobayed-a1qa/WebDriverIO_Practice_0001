@@ -53,12 +53,12 @@ export const config = {
         {
             // capabilities for local browser web tests
             browserName: 'chrome', // or "firefox", "microsoftedge", "safari"
-            maxInstances: 2,
-        },
-        {
-            browserName: `firefox`,
             maxInstances: 1,
-        }
+        },
+        // {
+        //     browserName: `firefox`,
+        //     maxInstances: 1,
+        // }
     ],
 
     //
