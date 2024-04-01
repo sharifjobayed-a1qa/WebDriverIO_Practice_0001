@@ -1,5 +1,5 @@
 import { beforeEach } from 'mocha';
-import mainPage from '../pageobjects/mainPage.js';
+import MainPage from '../pageobjects/mainPage.js';
 
 
 beforeEach(``,async()=>{
@@ -9,8 +9,12 @@ beforeEach(``,async()=>{
 
 
 describe('', async() => {
+
+    let MP;
+
     it('', async () => {
-        
+        MP=new MainPage();
+        MP.hoverOverLink();
     })
 })
 
