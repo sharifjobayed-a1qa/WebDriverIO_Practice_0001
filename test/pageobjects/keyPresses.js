@@ -10,11 +10,10 @@ class KeyPresses{
 		await this.keyPressesField.click();
 	}
 
-	async typeText(text) {	
-		// Type the desired text
-		await this.keyPressesField.clearAndType(await browser.keys(['Backspace']));
+	async typeText(text) {
+		await this.keyPressesField.clearAndType(text);
 	}	
 
 }
 
-export default KeyPresses();
+export default KeyPresses;

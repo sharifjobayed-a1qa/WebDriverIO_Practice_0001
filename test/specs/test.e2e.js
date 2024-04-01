@@ -22,7 +22,11 @@ describe('The Internet HerokuApp Test',async()=>{
     it(`Test Case 2`,async()=>{
         MP=new MainPage();
         MP.clickKeyPressesLink();
+
         KP=new KeyPresses();
+        KP.focusKeyPressesField();
+        KP.typeText(await browser.keys(['Backspace']));
+
     });
 
 })

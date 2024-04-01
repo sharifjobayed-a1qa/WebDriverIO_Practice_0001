@@ -1,8 +1,8 @@
 import Element from "./element.js";
 
-class MainPage {
+class MainPage{
     constructor() {
-        this.linkToHover = new Element(`//*[text()='Hovers']`, `Link to Hover`);
+        this.linkToHover=new Element(`//*[text()='Hovers']`, `Link to Hover`);
 		this.keyPressesLink=new Element(`//*[text()='Key Presses']`,`Link to Key Presses`);
     }
 
