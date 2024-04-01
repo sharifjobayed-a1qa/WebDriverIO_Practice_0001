@@ -1,4 +1,5 @@
 import { beforeEach } from 'mocha';
+import mainPage from '../pageobjects/mainPage.js';
 
 
 beforeEach(``,async()=>{
@@ -9,7 +10,7 @@ beforeEach(``,async()=>{
 
 describe('', async() => {
     it('', async () => {
-
+        
     })
 })
 
