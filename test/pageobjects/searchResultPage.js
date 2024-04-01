@@ -5,7 +5,6 @@ class SearchResultPage{
 	get pageTitle(){
 		return browser.getTitle();
 	}
-
 	async checkPageTitle(pageTitleText){
 		await expect(await this.pageTitle).toBe(pageTitleText);
 	}
@@ -13,7 +12,6 @@ class SearchResultPage{
 	get toolsDropDownArrow(){
 		return $(`//*[contains(@id,'vector-page-tools-dropdown-checkbox')]`);
 	}
-
 	async clickToolsDropDownArrow(){
 		(await this.toolsDropDownArrow).click();
 		// await driver.pause();
@@ -22,7 +20,6 @@ class SearchResultPage{
 	/*get toolsDropDownMenu(){
 		return $(`//*[contains(@id,'p-tb')]//*[contains(@class,'vector-menu-content-list')]`);
 	}
-
 	async checkToolsDropDownMenu(){
 		await (await this.toolsDropDownMenu).waitForDisplayed({timeout:10000});
 	}*/
@@ -30,20 +27,20 @@ class SearchResultPage{
 	get pdfDownloadLink(){
 		return $(`//*[text()='Download as PDF']`);
 	}
-
-	async clickPdfDownloadLink(){
+	async clickPdfDownloadLink(){		
 		// await this.checkToolsDropDownMenu();
-		await (await this.pdfDownloadLink).scrollIntoView({
+		/*await (await this.pdfDownloadLink).scrollIntoView({
 			behavior:`smooth`,
 			block:`center`,
 			inline:`nearest`
-		});
+		});*/
 		/*scroll({
 			top:500,
 			left:0,
 			behavior:`smooth`
 		});*/
-		await (await this.pdfDownloadLink).waitForClickable().click();
+		scroll(0,500);
+		await (await this.pdfDownloadLink).click();
 	}
 
 }
