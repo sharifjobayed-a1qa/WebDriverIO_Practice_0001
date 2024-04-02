@@ -1,5 +1,6 @@
 import Element from "./element.js";
 
+
 class KeyPresses{
     
 	constructor(){
@@ -10,8 +11,8 @@ class KeyPresses{
 		await this.keyPressesField.click();
 	}
 
-	async typeText(text) {
-		await this.keyPressesField.clearAndType(text);
+	async typeText(arg) {
+		await this.keyPressesField.clearAndType(arg);
 	}	
 
 }

@@ -15,6 +15,13 @@ class JSAlertPage{
 		await browser.acceptAlert();
 	}
 
+	async clickJSConfirmBtn(){
+		await this.jsConfirmBtn.click();
+	}
+	async denyJSConfirm(){
+		await browser.dismissAlert();
+	}
+
 }
 
 export default JSAlertPage;

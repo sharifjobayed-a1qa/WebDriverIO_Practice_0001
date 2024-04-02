@@ -2,6 +2,7 @@ import { beforeEach } from 'mocha';
 import MainPage from '../pageobjects/mainPage.js';
 import KeyPresses from '../pageobjects/keyPresses.js';
 import JSAlertPage from '../pageobjects/jsAlertPage.js';
+import { Key } from "webdriverio";
 
 
 beforeEach(``,async()=>{
@@ -12,9 +13,7 @@ beforeEach(``,async()=>{
 
 describe('The Internet HerokuApp Test',async()=>{
 
-    let MP;
-    let KP;
-    let JA;
+    let MP,KP,JA;
 
     it('Test Case 1', async () => {
         MP=new MainPage();
@@ -27,7 +26,7 @@ describe('The Internet HerokuApp Test',async()=>{
 
         KP=new KeyPresses();
         await KP.focusKeyPressesField();
-        await KP.typeText(await browser.keys(['Backspace']));
+        await KP.typeText(await browser.Key(`#backspace`));
 
     });
 
@@ -38,6 +37,8 @@ describe('The Internet HerokuApp Test',async()=>{
         JA=new JSAlertPage();
         await JA.clickJSAlertBtn();
         await JA.closeJSAlert();
+        await JA.clickJSConfirmBtn();
+        await JA.denyJSConfirm();
     });
 
 })
