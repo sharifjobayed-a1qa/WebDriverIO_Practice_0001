@@ -1,6 +1,7 @@
 import { beforeEach } from 'mocha';
 import MainPage from '../pageobjects/mainPage.js';
 import KeyPresses from '../pageobjects/keyPresses.js';
+import JSAlertPage from '../pageobjects/jsAlertPage.js';
 
 
 beforeEach(``,async()=>{
@@ -13,20 +14,30 @@ describe('The Internet HerokuApp Test',async()=>{
 
     let MP;
     let KP;
+    let JA;
 
     it('Test Case 1', async () => {
         MP=new MainPage();
-        MP.hoverOverLink();
+        await MP.hoverOverLink();
     });
 
     it(`Test Case 2`,async()=>{
         MP=new MainPage();
-        MP.clickKeyPressesLink();
+        await MP.clickKeyPressesLink();
 
         KP=new KeyPresses();
-        KP.focusKeyPressesField();
-        KP.typeText(await browser.keys(['Backspace']));
+        await KP.focusKeyPressesField();
+        await KP.typeText(await browser.keys(['Backspace']));
 
+    });
+
+    it(`Test Case 3`,async()=>{
+        MP=new MainPage();
+        await MP.clickJSAlertLink();
+
+        JA=new JSAlertPage();
+        await JA.clickJSAlertBtn();
+        await JA.closeJSAlert();
     });
 
 })
