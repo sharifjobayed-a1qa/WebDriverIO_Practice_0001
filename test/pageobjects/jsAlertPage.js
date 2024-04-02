@@ -22,6 +22,13 @@ class JSAlertPage{
 		await browser.dismissAlert();
 	}
 
+	async clickJSPromptBtn(){
+		await this.jsPromptBtn.click();
+	}
+	async typeInPrompt(arg){
+		await browser.sendAlertText(arg);
+	}
+
 }
 
 export default JSAlertPage;

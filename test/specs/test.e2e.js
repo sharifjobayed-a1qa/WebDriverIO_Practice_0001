@@ -15,12 +15,12 @@ describe('The Internet HerokuApp Test',async()=>{
 
     let MP,KP,JA;
 
-    it('Test Case 1', async () => {
+    it('Test Case 3', async () => {
         MP=new MainPage();
         await MP.hoverOverLink();
     });
 
-    it(`Test Case 2`,async()=>{
+    it(`Test Case 4`,async()=>{
         MP=new MainPage();
         await MP.clickKeyPressesLink();
 
@@ -30,7 +30,7 @@ describe('The Internet HerokuApp Test',async()=>{
 
     });
 
-    it(`Test Case 3`,async()=>{
+    it(`Test Case 5`,async()=>{
         MP=new MainPage();
         await MP.clickJSAlertLink();
 
@@ -39,6 +39,8 @@ describe('The Internet HerokuApp Test',async()=>{
         await JA.closeJSAlert();
         await JA.clickJSConfirmBtn();
         await JA.denyJSConfirm();
+        await JA.clickJSPromptBtn();
+        await JA.typeInPrompt(`Hello`);
     });
 
 })
