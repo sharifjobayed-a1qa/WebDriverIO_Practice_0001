@@ -31,6 +31,7 @@ describe('Main Page Tests', () => {
     await mainPage.clickOnJSAlertPageLink ();    
     jsAlertPage = new JSAlertPage();
     await jsAlertPage.handleAlert();
+    await jsAlertPage.handleConfirm();
   });
 
 });

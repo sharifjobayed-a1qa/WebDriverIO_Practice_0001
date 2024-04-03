@@ -1,7 +1,7 @@
 
 
-import BasePage from "./basePage.js";
 
+import BasePage from "./basePage.js";
 
 
 class KeyPressesPage extends BasePage{
