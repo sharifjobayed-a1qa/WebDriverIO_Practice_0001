@@ -4,7 +4,7 @@ import MainPage from "../pageobjects/mainPage.js";
 
 
 describe('Main Page Tests', () => {
-  let mainPage, keyPressesPage;
+  let mainPage;
 
   beforeEach(async () => {
     mainPage = new MainPage();
