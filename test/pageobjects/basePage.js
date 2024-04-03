@@ -8,11 +8,13 @@ class BasePage {
     this.pageUrl = pageUrl;
   }
 
-  async open() {
+  async goToURL () {
     await browser.url(this.pageUrl);
   }
-
-  async findElement(elLocator, elName) {
+  async currentPageTitle () {
+	return await browser.getTitle();
+  }
+  async findElement (elLocator, elName) {
     return new BaseElement(elLocator, elName);
   }
 }

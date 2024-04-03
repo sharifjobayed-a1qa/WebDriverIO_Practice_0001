@@ -2,8 +2,9 @@
 
 import MainPage from "../pageobjects/mainPage.js";
 
+
 describe('Main Page Tests', () => {
-  let mainPage;
+  let mainPage, keyPressesPage;
 
   beforeEach(async () => {
     mainPage = new MainPage();
@@ -14,14 +15,14 @@ describe('Main Page Tests', () => {
 
   
   it('should hover on Hovers link', async () => {
-    await mainPage.hoverOnHoversLink();
+    await mainPage.hoverOnHoversLink ();
   });
 
   it('should click on Key Presses page link and navigate', async () => {
-    await mainPage.clickOnKeyPressesPageLink();
+    await mainPage.clickOnKeyPressesPageLink ();
   });
 
   it('should click on JS Alert page link and navigate', async () => {
-    await mainPage.clickOnJSAlertPageLink();
+    await mainPage.clickOnJSAlertPageLink ();
   });
 });
