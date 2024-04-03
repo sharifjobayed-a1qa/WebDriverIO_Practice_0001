@@ -1,10 +1,12 @@
 
 
 import MainPage from "../pageobjects/mainPage.js";
+import KeyPressesPage from "../pageobjects/keyPressesPage.js";
+import JSAlertPage from "../pageobjects/jsAlertPage.js";
 
 
 describe('Main Page Tests', () => {
-  let mainPage;
+  let mainPage, keyPressesPage, jsAlertPage;
 
   beforeEach(async () => {
     mainPage = new MainPage();
@@ -20,9 +22,15 @@ describe('Main Page Tests', () => {
 
   it('should click on Key Presses page link and navigate', async () => {
     await mainPage.clickOnKeyPressesPageLink ();
+    keyPressesPage = new KeyPressesPage();
+    await keyPressesPage.clickOnTextField();
+    await keyPressesPage.pressKeyInTextField();
   });
 
   it('should click on JS Alert page link and navigate', async () => {
-    await mainPage.clickOnJSAlertPageLink ();
+    await mainPage.clickOnJSAlertPageLink ();    
+    jsAlertPage = new JSAlertPage();
+    await jsAlertPage.handleAlert();
   });
+
 });
