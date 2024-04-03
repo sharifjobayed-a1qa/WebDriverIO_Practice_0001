@@ -5,7 +5,7 @@ class JSAlertsPage extends BasePage{
 
 	constructor () {
 		super();
-	  }
+	}
 
 }
 

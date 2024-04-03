@@ -12,6 +12,9 @@ class BasePage extends BaseElement{
 		this.url = await browser.getUrl();
 		return this.url;
 	}
+	async currentElement (locator, title) {
+		return new BaseElement(locator, title);
+	}
 
 }
 

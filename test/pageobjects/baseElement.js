@@ -14,7 +14,7 @@ class BaseElement{
 		return $$(this.locator);
 	}
 	async clickOnIt () {
-		await this.elLocator();
+		await (await this.elLocator()).click();
 	}
 	async clearAndType () {
 		await this.elLocator.clearValue();
