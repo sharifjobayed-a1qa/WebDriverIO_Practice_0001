@@ -17,6 +17,7 @@ class BasePage {
   async findElement (elLocator, elName) {
     return new BaseElement(elLocator, elName);
   }
+  
 }
 
 export default BasePage;
