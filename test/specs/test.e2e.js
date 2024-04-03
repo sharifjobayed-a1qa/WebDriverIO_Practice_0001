@@ -1,6 +1,7 @@
 import { beforeEach } from "mocha";
 import MainPage from "../pageobjects/mainPage.js";
 import KeyPressesPage from "../pageobjects/keyPressesPage.js";
+import JSAlertsPage from "../pageobjects/jsAlertsPage.js";
 
 
 beforeEach(`Test Setup`, async () => {
@@ -16,14 +17,23 @@ describe('The Internet HerokuApp tests', () => {
     });
 
     it('Test Case 04', async () => {
-        const keyPressesPage = new KeyPressesPage();
         mainPage.clickKeyPressesLink();
+        
+        const keyPressesPage = new KeyPressesPage();
         keyPressesPage.clickOnInputField();
         // keyPressesPage.pressBackspaceKey();
     });
 
     it('Test Case 05', async () => {
-        
+        mainPage.clickJSAlertsLink();
+
+        const jsAlertsPage = new JSAlertsPage();
+        jsAlertsPage.clickAlertBtn();
+        jsAlertsPage.acceptCurrentAlert();
+        jsAlertsPage.clickConfirmBtn();
+        jsAlertsPage.denyConfirmDialogue();
+        jsAlertsPage.clickPromptBtn();
+        jsAlertsPage.typeAndAcceptPrompt();
     });
 
 })

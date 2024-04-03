@@ -15,6 +15,9 @@ class MainPage extends BasePage{
   async clickKeyPressesLink () {
     await (await this.currentElement(`//a[normalize-space()='Key Presses']`,`Key Presses Link`)).clickOnIt();
   }
+  async clickJSAlertsLink () {
+    await (await this.currentElement(`//a[normalize-space()='JavaScript Alerts']`,`JS Alerts Page link`)).clickOnIt();
+  }
 
 }
 
