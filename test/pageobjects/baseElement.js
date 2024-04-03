@@ -7,11 +7,11 @@ class BaseElement{
 		this.title = title;
 	}
 
-	async elLocator () {
-		return $(await this.locator);
+	get elLocator () {
+		return $(this.locator);
 	}
-	async elLocators () {
-		return $$(await this.locator);
+	get elLocators () {
+		return $$(this.locator);
 	}
 	async clickOnIt () {
 		await this.elLocator();

@@ -1,5 +1,18 @@
+import BaseElement from "./baseElement.js";
 
 
-class BasePage{}
+class BasePage extends BaseElement{
+
+	constructor (url) {
+		super();
+		this.url = url;
+	}
+
+	async currentPageURL () {
+		this.url = await browser.getUrl();
+		return this.url;
+	}
+
+}
 
 export default BasePage;

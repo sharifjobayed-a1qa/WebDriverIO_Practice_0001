@@ -1,5 +1,12 @@
+import BasePage from "./basePage.js";
 
 
-class JSAlertsPage{}
+class JSAlertsPage extends BasePage{
+
+	constructor () {
+		super();
+	  }
+
+}
 
 export default JSAlertsPage;
