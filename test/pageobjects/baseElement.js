@@ -27,7 +27,7 @@ class BaseElement {
 	async getText() {
 	  return await this.element.getText();
 	}
-  }
+}
   
-  export default BaseElement;
+export default BaseElement;
   
