@@ -9,11 +9,11 @@ class KeyPressesPage extends BasePage{
 	}
 
 	async clickOnInputField () {
-		(await this.currentElement(`//input[@id='target']`,`Input field`)).clickOnIt();
+		await (await this.currentElement(`//input[@id='target']`,`Input field`)).clickOnIt();
 	}
-	// async pressBackspaceKey () {
-	// 	await browser.keys(Keys.BACK_SPACE);
-	// } 
+	async pressBackspaceKey () {
+		await browser.keys(Keys.BACK_SPACE);
+	}
 
 }
 

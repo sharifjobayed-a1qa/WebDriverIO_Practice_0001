@@ -21,7 +21,7 @@ describe('The Internet HerokuApp tests', () => {
         
         const keyPressesPage = new KeyPressesPage();
         keyPressesPage.clickOnInputField();
-        // keyPressesPage.pressBackspaceKey();
+        keyPressesPage.pressBackspaceKey();
     });
 
     it('Test Case 05', async () => {
