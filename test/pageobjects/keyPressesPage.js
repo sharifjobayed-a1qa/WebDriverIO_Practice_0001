@@ -1,5 +1,6 @@
 
 
+import { keys } from 'webdriverio/keys';
 import BasePage from "./basePage.js";
 
 

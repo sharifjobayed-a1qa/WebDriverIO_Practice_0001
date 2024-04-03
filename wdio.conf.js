@@ -21,7 +21,8 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.js'
+        // ToDo: define location for spec files here
+        `./test/specs/**/*.js`,
     ],
     // Patterns to exclude.
     exclude: [
@@ -50,8 +51,7 @@ export const config = {
     // https://saucelabs.com/platform/platform-configurator
     //
     capabilities: [{
-        // capabilities for local browser web tests
-        browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
+        browserName: 'chrome'
     }],
 
     //
@@ -89,7 +89,6 @@ export const config = {
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
-    waitforInterval: 300,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -204,9 +203,8 @@ export const config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    beforeTest: function (test, context) {
-        browser.setWindowSize(1440,900);
-    },
+    // beforeTest: function (test, context) {
+    // },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)
