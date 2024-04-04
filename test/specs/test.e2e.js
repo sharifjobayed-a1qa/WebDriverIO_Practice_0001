@@ -11,23 +11,24 @@ beforeEach(`Test Setup`, async () => {
 describe('The Internet HerokuApp tests', () => {
 
     const mainPage = new MainPage();
+    const keyPressesPage = new KeyPressesPage();
+    const jsAlertsPage = new JSAlertsPage();
+
     
     it('Test Case 03', async () => {
         await mainPage.hoverOnHoversLink();
     });
 
     it('Test Case 04', async () => {
-        mainPage.clickKeyPressesLink();
+        mainPage.clickKeyPressesLink();        
         
-        const keyPressesPage = new KeyPressesPage();
         keyPressesPage.clickOnInputField();
         keyPressesPage.pressBackspaceKey();
     });
 
     it('Test Case 05', async () => {
         mainPage.clickJSAlertsLink();
-
-        const jsAlertsPage = new JSAlertsPage();
+        
         jsAlertsPage.clickAlertBtn();
         jsAlertsPage.acceptCurrentAlert();
         jsAlertsPage.clickConfirmBtn();

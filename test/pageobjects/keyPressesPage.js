@@ -1,5 +1,5 @@
-import BasePage from "./basePage.js";
-// import {Keys} from '@wdio';
+import BasePage from './basePage.js';
+import {Keys} from '@wdio';
 
 
 class KeyPressesPage extends BasePage{
@@ -12,7 +12,7 @@ class KeyPressesPage extends BasePage{
 		await (await this.currentElement(`//input[@id='target']`,`Input field`)).clickOnIt();
 	}
 	async pressBackspaceKey () {
-		await browser.keys(Keys.BACK_SPACE);
+		await (await this.currentElement(`//input[@id='target']`,`Input field`)).keys(await Keys.BACK_SPACE);
 	}
 
 }
