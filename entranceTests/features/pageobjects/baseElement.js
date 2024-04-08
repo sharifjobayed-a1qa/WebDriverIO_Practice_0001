@@ -29,6 +29,10 @@ class BaseElement {
 	async scrollToPosition (){
 		await (await this.elLocator).scrollIntoView();
 	}
+	async uploadFile (value){
+		await (await this.elLocator).setValue(value);
+	}
+
 	async clickAll (){
 		this.elLocators.forEach(i => i.click());
 	}
