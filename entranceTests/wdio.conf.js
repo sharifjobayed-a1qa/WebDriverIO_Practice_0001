@@ -21,7 +21,8 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './features/**/*.feature'
+        // ToDo: define location for spec files here
+        `./features/**/*.feature`,
     ],
     // Patterns to exclude.
     exclude: [
@@ -88,7 +89,6 @@ export const config = {
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
-    waitforInterval: 300,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -101,8 +101,8 @@ export const config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    // services: [],
-    //
+    services: ['visual'],
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -207,7 +207,7 @@ export const config = {
      * @param {Array.<String>} specs        List of spec file paths that are to be run
      * @param {object}         browser      instance of created browser/device session
      */
-    // before: async (capabilities, specs)=>{
+    // before: function (capabilities, specs) {
     // },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -224,7 +224,7 @@ export const config = {
      * @param {GherkinDocument.IFeature} feature  Cucumber feature object
      */
     beforeFeature: async (uri, feature)=>{
-        await browser.setWindowSize(1440, 900);
+        await browser.setWindowSize(1440,900);
     },
     /**
      *
@@ -254,7 +254,7 @@ export const config = {
      * @param {number}             result.duration  duration of scenario in milliseconds
      * @param {object}             context          Cucumber World object
      */
-    // afterStep: async (step, scenario, result, context)=>{
+    // afterStep: function (step, scenario, result, context) {
     // },
     /**
      *
@@ -274,9 +274,8 @@ export const config = {
      * @param {string}                   uri      path to feature file
      * @param {GherkinDocument.IFeature} feature  Cucumber feature object
      */
-    afterFeature: async (uri, feature)=>{
-        await browser.deleteSession();
-    },
+    // afterFeature: function (uri, feature) {
+    // },
     
     /**
      * Runs after a WebdriverIO command gets executed
@@ -294,7 +293,7 @@ export const config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that ran
      */
-    // after: async (result, capabilities, specs)=>{
+    // after: function (result, capabilities, specs) {
     // },
     /**
      * Gets executed right after terminating the webdriver session.
