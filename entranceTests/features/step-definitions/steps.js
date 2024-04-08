@@ -25,11 +25,12 @@ When (`I input random valid password, email, accept the terms of use and click "
 	await registrationPage.submitRegistrationForm();
 });
 Then (`The '2' card is open.`, async ()=>{
-	
+	profilePage = new ProfilePage();
+	await profilePage.confirmProfilePage();
 });
 When (`I Choose 3 random interests, upload image, click "Next" button.`, async ()=>{
-	profilePage = new ProfilePage();
-	profilePage.selectAny3Interests();
+	await profilePage.selectAny3Interests();
+	await profilePage.uploadImage();
 });
 Then (`The '3' card is open.`, async ()=>{
 	
