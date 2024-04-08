@@ -1,6 +1,5 @@
 
 
-import BaseElement from "./baseElement";
 import BasePage from "./basePage.js";
 
 
@@ -11,7 +10,8 @@ class ProfilePage extends BasePage {
 	}
 
 	async selectAny3Interests (){
-		const interestsList = this.currentElement(`//*[contains(@class,'checkbox small')]`, `Interest list checkboxes`);
+		await (await this.currentElement(`//*[contains(@class,'checkbox small')]`, `Interests checkboxes`)).clickAll();
+		await (await this.currentElement(`//*[contains(@class,'checkbox small')]`, `Interests checkboxes`)).clickAny3();
 	}
 
 }

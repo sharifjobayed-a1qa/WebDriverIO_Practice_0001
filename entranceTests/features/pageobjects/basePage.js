@@ -13,9 +13,7 @@ class BasePage {
 		await expect(currentPageTitle).toBe(await value);
 	}
 	async currentElement (locator, name){
-		this.locator = await locator;
-		this.name = await name;
-		return new BaseElement(await this.locator, await this.name);
+		return new BaseElement(await locator, await name);
 	}
 
 }

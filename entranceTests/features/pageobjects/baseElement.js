@@ -29,6 +29,19 @@ class BaseElement {
 	async scrollToPosition (){
 		await (await this.elLocator).scrollIntoView();
 	}
+	async clickAll (){
+		this.elLocators.forEach(i => i.click());
+	}
+	async clickAny3 (){
+		const i1 = Math.round(Math.random() * this.elLocators.length);
+		const i2 = Math.round(Math.random() * this.elLocators.length);
+		const i3 = Math.round(Math.random() * this.elLocators.length);
+		this.elLocators.forEach(i => {
+			if (i == i1 && i == i2 && i == i3){
+				i.click();
+			}
+		});
+	}
 
 }
 

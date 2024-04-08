@@ -1,7 +1,6 @@
 
 
 import BasePage from "./basePage.js";
-import BaseElement from "./baseElement.js";
 
 
 class RegistrationPage extends BasePage {

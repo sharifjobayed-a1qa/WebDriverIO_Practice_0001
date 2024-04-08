@@ -3,9 +3,10 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 import MainPage from '../pageobjects/mainPage.js';
 import RegistrationPage from '../pageobjects/registrationPage.js';
+import ProfilePage from '../pageobjects/profilePage.js';
 
 
-let mainPage, registrationPage;
+let mainPage, registrationPage, profilePage;
 
 Given (`I'm on the Home page`, async ()=>{
 	mainPage = new MainPage();
@@ -27,7 +28,8 @@ Then (`The '2' card is open.`, async ()=>{
 	
 });
 When (`I Choose 3 random interests, upload image, click "Next" button.`, async ()=>{
-	
+	profilePage = new ProfilePage();
+	profilePage.selectAny3Interests();
 });
 Then (`The '3' card is open.`, async ()=>{
 	
