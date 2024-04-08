@@ -26,7 +26,7 @@ When (`I input random valid password, email, accept the terms of use and click "
 Then (`The '2' card is open.`, async ()=>{
 	
 });
-When (`I Choose 2 random interests, upload image, click "Next" button.`, async ()=>{
+When (`I Choose 3 random interests, upload image, click "Next" button.`, async ()=>{
 	
 });
 Then (`The '3' card is open.`, async ()=>{

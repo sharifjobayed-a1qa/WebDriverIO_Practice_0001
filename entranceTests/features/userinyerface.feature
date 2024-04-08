@@ -13,6 +13,6 @@ Feature: Userinyerface test
     Then The '1' card is open.
     When I input random valid password, email, accept the terms of use and click "next" button.
     Then The '2' card is open.
-    When I Choose 2 random interests, upload image, click "Next" button.
+    When I Choose 3 random interests, upload image, click "Next" button.
     Then The '3' card is open.
 

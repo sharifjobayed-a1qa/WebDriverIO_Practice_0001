@@ -14,31 +14,31 @@ class RegistrationPage extends BasePage {
 		await this.checkPageTitle(`User Inyerface - A worst-practice UI experiment`);
 	}
 	async acceptCookies (){
-		await new BaseElement(`//button[normalize-space()='Not really, no']`, `Cookies accept button`).doClick();
+		await (await this.currentElement(`//button[normalize-space()='Not really, no']`, `Cookies accept button`)).doClick();
 	}
 	async fillPassword (){
-		await new BaseElement(`//input[@placeholder='Choose Password']`,`Password field`).clearAndType(`0-Password-0`);
+		await (await this.currentElement(`//input[@placeholder='Choose Password']`,`Password field`)).clearAndType(`0-Password-0`);
 	}
 	async fillUsername (){
-		await new BaseElement(`//input[@placeholder='Your email']`,`Username field`).clearAndType(`a1qa`);
+		await (await this.currentElement(`//input[@placeholder='Your email']`,`Username field`)).clearAndType(`a1qa`);
 	}
 	async fillEmailDomain (){
-		await new BaseElement(`//input[@placeholder='Domain']`,`Domain field`).clearAndType(`nomail`);
+		await (await this.currentElement(`//input[@placeholder='Domain']`,`Domain field`)).clearAndType(`nomail`);
 	}
 	async clickSuffixDropdownArrow (){
-		await new BaseElement(`//span[@class='icon icon-chevron-down']`,`Suffix dropdown arrow`).doClick();
+		await (await this.currentElement(`//span[@class='icon icon-chevron-down']`,`Suffix dropdown arrow`)).doClick();
 	}
 	async selectSuffix (){
-		await new BaseElement(`//*[contains(@class,'dropdown__list')][1]`,`Suffix list`).waitUntillElementVisible();
-		await new BaseElement(`//div[normalize-space()='.com']`,`.com suffix`).scrollToPosition();
-		await new BaseElement(`//div[normalize-space()='.com']`,`.com suffix`).doClick();
+		await (await this.currentElement(`//*[contains(@class,'dropdown__list')][1]`,`Suffix list`)).waitUntillElementVisible();
+		await (await this.currentElement(`//div[normalize-space()='.com']`,`.com suffix`)).scrollToPosition();
+		await (await this.currentElement(`//div[normalize-space()='.com']`,`.com suffix`)).doClick();
 
 	}
 	async acceptTAndC (){
-		await new BaseElement(`//span[@class='icon icon-check checkbox__check']`,`Terms & Conditions checkbox`).doClick();
+		await (await this.currentElement(`//span[@class='icon icon-check checkbox__check']`,`Terms & Conditions checkbox`)).doClick();
 	}
 	async clickNextBtn (){
-		await new BaseElement(`//a[@class='button--secondary']`,`Next button`).doClick();
+		await (await this.currentElement(`//a[@class='button--secondary']`,`Next button`)).doClick();
 	}
 	async submitRegistrationForm (){
 		await this.fillPassword();
