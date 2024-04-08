@@ -20,7 +20,7 @@ class RegistrationPage extends BasePage {
 		await new BaseElement(`//input[@placeholder='Choose Password']`,`Password field`).clearAndType(`0-Password-0`);
 	}
 	async fillUsername (){
-		await new BaseElement(`//input[@placeholder='Your email']`,`Username field`).clearAndType(``);
+		await new BaseElement(`//input[@placeholder='Your email']`,`Username field`).clearAndType(`a1qa`);
 	}
 	async fillEmailDomain (){
 		await new BaseElement(`//input[@placeholder='Domain']`,`Domain field`).clearAndType(`nomail`);
@@ -40,14 +40,14 @@ class RegistrationPage extends BasePage {
 	async clickNextBtn (){
 		await new BaseElement(`//a[@class='button--secondary']`,`Next button`).doClick();
 	}
-	async fillRegistrationForm (){
+	async submitRegistrationForm (){
 		await this.fillPassword();
 		await this.fillUsername();
 		await this.fillEmailDomain();
 		await this.clickSuffixDropdownArrow();
 		await this.selectSuffix();
 		await this.acceptTAndC();
-		await this.clickNextBtn();	;
+		await this.clickNextBtn();
 	}
 
 }

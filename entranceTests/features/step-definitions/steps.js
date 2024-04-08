@@ -19,10 +19,9 @@ Then (`The '1' card is open.`, async ()=>{
 	registrationPage = new RegistrationPage();
 	await registrationPage.confirmRegistrationPage();
 	await registrationPage.acceptCookies();
-	await registrationPage.fillRegistrationForm();
 });
 When (`I input random valid password, email, accept the terms of use and click "next" button.`, async ()=>{
-	
+	await registrationPage.submitRegistrationForm();
 });
 Then (`The '2' card is open.`, async ()=>{
 	
