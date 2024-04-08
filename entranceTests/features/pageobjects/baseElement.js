@@ -23,6 +23,12 @@ class BaseElement {
 	async hoverOnIt (){
 		await (await this.elLocator).moveTo();
 	}
+	async waitUntillElementVisible (){
+		await (await this.elLocator).waitForDisplayed({timeout:30000});
+	}
+	async scrollToPosition (){
+		await (await this.elLocator).scrollIntoView();
+	}
 
 }
 

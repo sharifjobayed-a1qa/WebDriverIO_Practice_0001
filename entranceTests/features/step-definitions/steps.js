@@ -2,9 +2,10 @@
 
 import { Given, When, Then } from '@wdio/cucumber-framework';
 import MainPage from '../pageobjects/mainPage.js';
+import RegistrationPage from '../pageobjects/registrationPage.js';
 
 
-let mainPage;
+let mainPage, registrationPage;
 
 Given (`I'm on the Home page`, async ()=>{
 	mainPage = new MainPage();
@@ -15,7 +16,10 @@ When (`I click the HERE link to navigate the next page.`, async ()=>{
 	await mainPage.clickOnHERELink();
 });
 Then (`The '1' card is open.`, async ()=>{
-	
+	registrationPage = new RegistrationPage();
+	await registrationPage.confirmRegistrationPage();
+	await registrationPage.acceptCookies();
+	await registrationPage.fillRegistrationForm();
 });
 When (`I input random valid password, email, accept the terms of use and click "next" button.`, async ()=>{
 	
