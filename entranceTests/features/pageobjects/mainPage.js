@@ -1,6 +1,5 @@
 
 
-// import BaseElement from "./baseElement.js";
 import BasePage from "./basePage.js";
 
 
@@ -18,8 +17,7 @@ class MainPage extends BasePage {
 		await this.checkPageTitle(`User Inyerface - A worst-practice UI experiment`);
 	}
 	async clickOnHERELink (){
-		const hereLink = await this.currentElement(`.start__link`, `HERE link`);
-		await hereLink.doClick();
+		await (await this.currentElement(`//a[@class='start__link']`, `HERE link`)).doClick(); 
 	}
 	
 }

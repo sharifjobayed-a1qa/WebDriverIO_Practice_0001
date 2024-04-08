@@ -2,21 +2,26 @@
 
 class BaseElement {
 
-	constructor (locator, locators, name){
-		this.locator = $(locator);
-		this.locators = $$(locators);
+	constructor (locator, name){
+		this.locator = locator;
 		this.name = name;
 	}
 
+	get elLocator (){
+		return $(this.locator);
+	}
+	get elLocators (){
+		return $$(this.locator);
+	}
 	async doClick (){
-		await (await this.locator).click();
+		await (await this.elLocator).click();
 	}
 	async clearAndType (value){
-		await (await this.locator).clearValue();
-		await (await this.locator).addValue(value);
+		await (await this.elLocator).clearValue();
+		await (await this.elLocator).addValue(value);
 	}
 	async hoverOnIt (){
-		await (await this.locator).moveTo();
+		await (await this.elLocator).moveTo();
 	}
 
 }

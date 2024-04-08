@@ -1,7 +1,6 @@
 
 
 import { Given, When, Then } from '@wdio/cucumber-framework';
-// const {Given, When, Then} = require('@wdio/cucumber-framework');
 import MainPage from '../pageobjects/mainPage.js';
 
 
