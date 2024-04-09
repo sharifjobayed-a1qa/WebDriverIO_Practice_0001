@@ -14,7 +14,7 @@ class MainPage extends BasePage {
 		await browser.url(this.url);
 	}
 	async confirmMainPage (){
-		await this.checkPageTitle(`User Inyerface - A worst-practice UI experiment`);
+		await this.confirmPage(await this.currentElement(`//a[@class='start__link']`, `HERE link`, `HERE link`));
 	}
 	async clickOnHERELink (){
 		await (await this.currentElement(`//a[@class='start__link']`, `HERE link`)).doClick(); 

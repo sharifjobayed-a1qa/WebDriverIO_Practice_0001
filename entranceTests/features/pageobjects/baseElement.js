@@ -13,6 +13,9 @@ class BaseElement {
 	get elLocators (){
 		return $$(this.locator);
 	}
+	async confirmElement() {
+		await expect(this.elLocator).toBeDisplayed();
+	}
 	async doClick (){
 		await (await this.elLocator).click();
 	}

@@ -10,7 +10,7 @@ class ProfilePage extends BasePage {
 	}
 
 	async confirmProfilePage (){
-		await this.checkPageTitle(`User Inyerface - A worst-practice UI experiment`);
+		await this.confirmPage(await this.currentElement(`//h2[normalize-space()='Choose 3 interests']`, `Interests checkboxes heading`));
 	}
 	async selectAny3Interests (){
 		await (await this.currentElement(`//*[contains(@class,'checkbox small')]`, `Interests checkboxes`)).clickAll();

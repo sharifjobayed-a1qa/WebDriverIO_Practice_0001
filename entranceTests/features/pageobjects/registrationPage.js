@@ -10,7 +10,7 @@ class RegistrationPage extends BasePage {
 	}
 
 	async confirmRegistrationPage (){
-		await this.checkPageTitle(`User Inyerface - A worst-practice UI experiment`);
+		await this.confirmPage(await this.currentElement(`//div[@class='timer timer--white timer--center']`, `Time counter element`));
 	}
 	async acceptCookies (){
 		await (await this.currentElement(`//button[normalize-space()='Not really, no']`, `Cookies accept button`)).doClick();

@@ -8,11 +8,14 @@ class BasePage {
 
 	constructor (){}
 
-	async checkPageTitle (value){
+	async checkPageTitle(value) {
 		const currentPageTitle = await browser.getTitle();
 		await expect(currentPageTitle).toBe(await value);
 	}
-	async currentElement (locator, name){
+	async confirmPage(element) {
+		await element.confirmElement();
+	}
+	async currentElement(locator, name) {
 		return new BaseElement(await locator, await name);
 	}
 
