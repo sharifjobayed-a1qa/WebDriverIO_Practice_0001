@@ -42,7 +42,7 @@ class BaseElement {
 	}
 	async waitUntilInvisible() {
 		await (await this.elLocator).waitForDisplayed({reverse:true});
-		await expect(this.elLocator).not.toBeDisabled();
+		await expect(this.elLocator).not.toBeDisplayed();
 	}
 
 	async clickAll (){
