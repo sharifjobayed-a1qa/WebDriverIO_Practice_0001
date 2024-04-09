@@ -41,8 +41,8 @@ class BaseElement {
 		await expect(this.elLocator).toBeDisplayed();
 	}
 	async waitUntilInvisible() {
-		await (await this.elLocator).waitForDisplayed({reverse:true});
-		await expect(this.elLocator).not.toBeDisplayed();
+		await (await this.elLocator).waitForDisplayed({reverse:true,timeout:20000});
+		await expect(this.elLocator).not.toBeDisplayed({message:`The element is still visible.`});
 	}
 
 	async clickAll (){

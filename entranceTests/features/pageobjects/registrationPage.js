@@ -63,7 +63,7 @@ class RegistrationPage extends BasePage {
 		await (await this.currentElement(`//button[@class='button button--solid button--blue help-form__send-to-bottom-button']`, `HelpBox hide button`)).doClick();
 	}
 	async checkHelpBoxVisibility() {
-		await (await this.currentElement(`//div[contains(@class,'help-form__container')]`, `HelpBox container`)).waitUntilInvisible();
+		await (await this.currentElement(`//div[@class='help-form__container']`, `HelpBox container`)).waitUntilInvisible();
 	}
 
 }
