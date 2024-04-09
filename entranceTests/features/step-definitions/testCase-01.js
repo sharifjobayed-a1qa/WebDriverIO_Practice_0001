@@ -34,6 +34,6 @@ When (`I Choose 3 random interests, click "Next" button.`, async ()=>{
 	await profilePage.clickOnNextBtn();
 });
 Then (`The expected result is, Text {string} appear, text color is green.`, async (string)=>{
-	await expect(profilePage.profilePicWarning()).toEqual(string);
+	await expect(await profilePage.profilePicWarning()).toEqual(string);
 	await profilePage.verifyTextColor();
 });

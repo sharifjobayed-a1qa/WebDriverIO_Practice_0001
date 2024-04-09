@@ -22,7 +22,6 @@ class ProfilePage extends BasePage {
 	}
 	async profilePicWarning() {
 		return (await this.currentElement(`//li[normalize-space()='Please upload a picture']`, `Profile picture warning element.`)).elText();
-
 	}
 	async verifyTextColor() {
 		await (await this.currentElement(`//li[normalize-space()='Please upload a picture']`, `Image upload warning element`)).matchTextColor(`rgba(41,197,102,1)`);
