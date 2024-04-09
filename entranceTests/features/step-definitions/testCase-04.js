@@ -12,6 +12,6 @@ When (`I Validate that timer starts from {string}`, async (string)=>{
 	await mainPage.checkPageTitle();
 	await mainPage.clickOnHERELink();
 	registrationPage = new RegistrationPage();
-	await registrationPage.acceptCookies();
 	await registrationPage.timeCounterFromAll0(string);
+	await registrationPage.acceptCookies();
 });
