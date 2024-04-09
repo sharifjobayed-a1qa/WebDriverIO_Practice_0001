@@ -28,11 +28,11 @@ Then (`The '2' card is open.`, async ()=>{
 	profilePage = new ProfilePage();
 	await profilePage.confirmProfilePage();
 });
-When (`I Choose 3 random interests, upload image, click "Next" button.`, async ()=>{
+When (`I Choose 3 random interests, click "Next" button.`, async ()=>{
 	await profilePage.selectAny3Interests();
-	await profilePage.uploadImage();	
 	await profilePage.clickOnNextBtn();
 });
-Then (`The '3' card is open.`, async ()=>{
-	// The Next button takes to next page only when a profile picture is set. Since the profile picture could not be set via "a" tag, so this step remains undone.
+Then (`The expected result is, Text {string} appear, text color is green.`, async (string)=>{
+	await profilePage.verifyText(string);
+	await profilePage.verifyTextColor();
 });

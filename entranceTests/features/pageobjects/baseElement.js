@@ -26,8 +26,12 @@ class BaseElement {
 	async scrollToPosition (){
 		await (await this.elLocator).scrollIntoView();
 	}
-	async uploadFile (value){
-		await (await this.elLocator).setValue(value);
+	async matchText(text) {
+		await expect ((await this.elLocator).getText()).toEqual(await text);
+	}
+	async matchTextColor (value){
+		const elColor = (await this.elLocator.getCSSProperty(`color`)).value;
+		await expect(elColor).toEqual(value);
 	}
 	async waitUntillElementVisible (){
 		await (await this.elLocator).waitForDisplayed({timeout:30000});

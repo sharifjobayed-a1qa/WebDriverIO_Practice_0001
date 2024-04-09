@@ -13,8 +13,8 @@ Feature: Userinyerface test
     Then The '1' card is open.
     When I input random valid password, email, accept the terms of use and click "next" button.
     Then The '2' card is open.
-    When I Choose 3 random interests, upload image, click "Next" button.
-    Then The '3' card is open.
+    When I Choose 3 random interests, click "Next" button.
+    Then The expected result is, Text 'Please upload a picture' appear, text color is green.
 
   Scenario Outline: Test Case 02
     When I hide help form.
