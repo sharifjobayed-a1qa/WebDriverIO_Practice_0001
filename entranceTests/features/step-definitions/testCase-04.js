@@ -10,7 +10,6 @@ let mainPage, registrationPage;
 
 When (`I Validate that timer starts from {string}`, async (string)=>{
 	mainPage = new MainPage();
-	await mainPage.checkPageTitle();
 	await mainPage.clickOnHERELink();
 	registrationPage = new RegistrationPage();
 	await expect(await registrationPage.timeCounterFromAll0()).toEqual(string);

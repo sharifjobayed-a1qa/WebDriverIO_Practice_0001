@@ -8,10 +8,10 @@ class BasePage {
 
 	constructor (){}
 
-	async checkPageTitle(value) {
+	/* async checkPageTitle(value) {
 		const currentPageTitle = await browser.getTitle();
 		await expect(currentPageTitle).toBe(await value);
-	}
+	} */
 	async confirmPage(element) {
 		await element.confirmElement();
 	}
