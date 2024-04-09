@@ -22,7 +22,7 @@ Feature: Userinyerface test
 
   Scenario Outline: Test Case 03
     When I Accept cookies.
-    Then Form is closed.
+    Then The first form warning says 'Your password requires at least 10 characters.'.
 
   Scenario Outline: Test Case 04
     And I Validate that timer starts from "00:00"

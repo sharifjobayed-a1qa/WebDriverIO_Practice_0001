@@ -48,13 +48,18 @@ class RegistrationPage extends BasePage {
 		await this.acceptTAndC();
 		await this.clickNextBtn();
 	}
+	async verifyText(text) {
+		await (await this.currentElement(`//div[normalize-space()='Your password requires at least 10 characters.']`, `Form warning`)).matchText(text);
+	}
+	async verifyTextColor() {
+		await (await this.currentElement(`//div[normalize-space()='Your password requires at least 10 characters.']`, `Form warning element`)).matchTextColor(`rgba(41,197,102,1)`);
+	}
 
 	
 	async hideHelpBox() {
 		await (await this.currentElement(`//button[@class='button button--solid button--blue help-form__send-to-bottom-button']`, `HelpBox hide button`)).doClick();
 	}
 	async checkHelpBoxVisibility() {
-		//div[contains(@class,'help-form__container')]
 		await (await this.currentElement(`//div[contains(@class,'help-form__container')]`, `HelpBox container`)).waitUntilInvisible();
 	}
 
