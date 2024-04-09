@@ -15,6 +15,9 @@ class RegistrationPage extends BasePage {
 	async acceptCookies (){
 		await (await this.currentElement(`//button[normalize-space()='Not really, no']`, `Cookies accept button`)).doClick();
 	}
+	async timeCounterFromAll0(text) {
+		expect((await this.currentElement(`//div[@class='timer timer--white timer--center']`, `Time counter element`)).matchText(await text));
+	}
 	async fillPassword (){
 		await (await this.currentElement(`//input[@placeholder='Choose Password']`,`Password field`)).clearAndType(`0-Password-0`);
 	}

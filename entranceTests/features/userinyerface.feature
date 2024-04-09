@@ -25,6 +25,6 @@ Feature: Userinyerface test
     Then The first form warning says 'Your password requires at least 10 characters.'.
 
   Scenario Outline: Test Case 04
-    And I Validate that timer starts from "00:00"
+    And I Validate that timer starts from "00:00:00"
 
 
