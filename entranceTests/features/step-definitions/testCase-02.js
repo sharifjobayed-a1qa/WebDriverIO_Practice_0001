@@ -16,5 +16,5 @@ When (`I hide help form.`, async ()=>{
 });
 
 Then (`The form content is hidden.`, async ()=>{
-	
+	await registrationPage.checkHelpBoxVisibility();
 });
