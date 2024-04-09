@@ -23,14 +23,19 @@ class BaseElement {
 	async hoverOnIt (){
 		await (await this.elLocator).moveTo();
 	}
-	async waitUntillElementVisible (){
-		await (await this.elLocator).waitForDisplayed({timeout:30000});
-	}
 	async scrollToPosition (){
 		await (await this.elLocator).scrollIntoView();
 	}
 	async uploadFile (value){
 		await (await this.elLocator).setValue(value);
+	}
+	async waitUntillElementVisible (){
+		await (await this.elLocator).waitForDisplayed({timeout:30000});
+		await expect(this.elLocator).toBeDisplayed();
+	}
+	async waitUntilInvisible() {
+		await (await this.elLocator).waitForDisplayed({reverse:true});
+		await expect(this.elLocator).not.toBeDisabled();
 	}
 
 	async clickAll (){

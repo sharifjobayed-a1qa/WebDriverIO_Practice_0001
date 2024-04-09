@@ -19,6 +19,9 @@ class ProfilePage extends BasePage {
 	async uploadImage (){
 		await (await this.currentElement(`//a[@class='avatar-and-interests__upload-button']`, `Image upload link`)).uploadFile(`resources/Max_Payne_2.jpg`);
 	}
+	async clickOnNextBtn (){
+		await (await this.currentElement(`//button[normalize-space()='Next']`,`Next button`)).doClick();
+	}
 
 }
 
