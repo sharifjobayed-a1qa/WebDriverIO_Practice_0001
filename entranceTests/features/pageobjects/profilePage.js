@@ -1,5 +1,6 @@
 
 
+import BaseElement from "./baseElement.js";
 import BasePage from "./basePage.js";
 
 
@@ -19,8 +20,9 @@ class ProfilePage extends BasePage {
 	async clickOnNextBtn (){
 		await (await this.currentElement(`//button[normalize-space()='Next']`,`Next button`)).doClick();
 	}
-	async verifyText(text) {
-		await (await this.currentElement(`//li[normalize-space()='Please upload a picture']`, `Image upload warning`)).matchText(text);
+	async profilePicWarning() {
+		return (await this.currentElement(`//li[normalize-space()='Please upload a picture']`, `Profile picture warning element.`)).elText();
+
 	}
 	async verifyTextColor() {
 		await (await this.currentElement(`//li[normalize-space()='Please upload a picture']`, `Image upload warning element`)).matchTextColor(`rgba(41,197,102,1)`);

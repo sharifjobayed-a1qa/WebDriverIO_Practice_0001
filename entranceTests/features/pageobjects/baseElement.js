@@ -13,6 +13,9 @@ class BaseElement {
 	get elLocators (){
 		return $$(this.locator);
 	}
+	async elText() {
+		return (await this.elLocator).getText();
+	}
 	async confirmElement() {
 		await expect(this.elLocator).toBeDisplayed();
 	}
@@ -28,9 +31,6 @@ class BaseElement {
 	}
 	async scrollToPosition (){
 		await (await this.elLocator).scrollIntoView();
-	}
-	async matchText(text) {
-		await expect ((await this.elLocator).getText()).toEqual(await text);
 	}
 	async matchTextColor (value){
 		const elColor = (await this.elLocator.getCSSProperty(`color`)).value;
@@ -57,6 +57,9 @@ class BaseElement {
 				i.click();
 			}
 		});
+	}
+	async getSingleItemsText(index) {
+		return this.elLocators[index].getText();
 	}
 
 }

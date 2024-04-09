@@ -15,8 +15,8 @@ class RegistrationPage extends BasePage {
 	async acceptCookies (){
 		await (await this.currentElement(`//button[normalize-space()='Not really, no']`, `Cookies accept button`)).doClick();
 	}
-	async timeCounterFromAll0(text) {
-		expect((await this.currentElement(`//div[@class='timer timer--white timer--center']`, `Time counter element`)).matchText(await text));
+	async timeCounterFromAll0() {
+		return await (await this.currentElement(`//div[@class='timer timer--white timer--center']`, `Time counter element`)).elText();
 	}
 	async fillPassword (){
 		await (await this.currentElement(`//input[@placeholder='Choose Password']`,`Password field`)).clearAndType(`0-Password-0`);
@@ -51,8 +51,8 @@ class RegistrationPage extends BasePage {
 		await this.acceptTAndC();
 		await this.clickNextBtn();
 	}
-	async verifyText(text) {
-		await (await this.currentElement(`//div[normalize-space()='Your password requires at least 10 characters.']`, `Form warning`)).matchText(text);
+	async passwordLengthHint() {
+		return (await this.currentElement(`//div[normalize-space()='Your password requires at least 10 characters.']`, `Form warning`)).elText();
 	}
 	async verifyTextColor() {
 		await (await this.currentElement(`//div[normalize-space()='Your password requires at least 10 characters.']`, `Form warning element`)).matchTextColor(`rgba(41,197,102,1)`);

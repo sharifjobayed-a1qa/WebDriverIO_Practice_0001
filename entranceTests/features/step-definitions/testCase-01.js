@@ -1,6 +1,7 @@
 
 
 import { Given, When, Then } from '@wdio/cucumber-framework';
+import {expect} from '@wdio/globals';
 import MainPage from '../pageobjects/mainPage.js';
 import RegistrationPage from '../pageobjects/registrationPage.js';
 import ProfilePage from '../pageobjects/profilePage.js';
@@ -33,6 +34,6 @@ When (`I Choose 3 random interests, click "Next" button.`, async ()=>{
 	await profilePage.clickOnNextBtn();
 });
 Then (`The expected result is, Text {string} appear, text color is green.`, async (string)=>{
-	await profilePage.verifyText(string);
+	await expect(profilePage.profilePicWarning()).toEqual(string);
 	await profilePage.verifyTextColor();
 });
