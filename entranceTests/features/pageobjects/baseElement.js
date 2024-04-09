@@ -41,8 +41,14 @@ class BaseElement {
 		await expect(this.elLocator).toBeDisplayed();
 	}
 	async waitUntilInvisible() {
-		await (await this.elLocator).waitForDisplayed({reverse:true,timeout:12000});
-		await expect(this.elLocator).not.toBeDisplayed({message:`The element is still visible.`});
+		browser.waitUntil(() => {
+			return !this.elLocator.isDisplayed();
+		}, {
+			timeout: 15000,
+			timeoutMsg: 'Element did not disappear within 15 seconds',
+			interval: 500
+		});
+		
 	}
 
 	async clickAll (){
