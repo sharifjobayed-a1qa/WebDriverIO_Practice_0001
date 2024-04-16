@@ -7,8 +7,14 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+# Allure report
+entranceTests/allure-results
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# Allure
+./allure-results
 
 # Runtime data
 pids
