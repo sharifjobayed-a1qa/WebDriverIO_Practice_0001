@@ -22,7 +22,7 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        `./features/**/*.feature`,
+        './features/**/*.feature',
     ],
     // Patterns to exclude.
     exclude: [
@@ -61,7 +61,7 @@ export const config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'warn',
     //
     // Set specific log levels per logger
     // loggers:
@@ -101,8 +101,8 @@ export const config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['visual'],
-
+    // services: [],
+    //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -129,8 +129,7 @@ export const config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require:
-        ['./features/step-definitions/**/*.js'],
+        require: ['./features/step-definitions/**/*.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -224,7 +223,7 @@ export const config = {
      * @param {string}                   uri      path to feature file
      * @param {GherkinDocument.IFeature} feature  Cucumber feature object
      */
-    // beforeFeature: async (uri, feature)=>{
+    // beforeFeature: function (uri, feature) {
     // },
     /**
      *
@@ -232,8 +231,8 @@ export const config = {
      * @param {ITestCaseHookParameter} world    world object containing information on pickle and test step
      * @param {object}                 context  Cucumber World object
      */
-    beforeScenario: async (world, context)=>{
-        await browser.setWindowSize(1440,900);
+    beforeScenario: async(world, context) => {
+        await browser.setWindowSize(1440, 900);
     },
     /**
      *
