@@ -3,22 +3,31 @@ import {$, $$} from '@wdio/globals';
 
 class BaseElement {
 
-	constructor(locator, locators, name) {
-		this.locator = $(locator);
-		this.locators = $$(locators);
+	constructor(locator, name) {
+		this.elLocator = $(locator);
+		this.elLocators = $$(locator);
 		this.name = name;
 		return this;
 	}
 
 	async doClick() {
-		await (await this.locator).click();
+		await (await this.elLocator).click();
+	}
+	async clearAndType(value) {
+		(await this.elLocator).clearValue();
+		(await this.elLocator).addValue(value);
+	}
+	async waitUntillElementVisible() {
+		await (await this.elLocator).waitForDisplayed({timeout:15000});
+	}
+	async scrollToPosition (){
+		await (await this.elLocator).scrollIntoView();
 	}
 	async elementText() {
-		await (await this.locator).getText();
+		await (await this.elLocator).getText();
 	}
-	async clearAndType() {
-		await (await this.locator).clearValue();
-		await (await this.locator).addValue();
+	async elementExistence() {
+		return this.elLocator.isExisting();
 	}
 
 }

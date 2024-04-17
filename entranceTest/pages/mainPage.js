@@ -7,7 +7,12 @@ class MainPage extends BasePage {
 		super();
 	}
 
-	
+	async goToMainPage() {
+		await this.goToURL(`https://userinyerface.com/`);
+	}
+	async clickHERELink() {
+		await (await this.currentElement(`//a[@class='start__link']`, `HERE link`)).doClick();
+	}
 
 }
 

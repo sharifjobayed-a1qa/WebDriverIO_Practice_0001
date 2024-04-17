@@ -1,20 +1,17 @@
 import BaseElement from "./baseElement.js";
 
 
-class BasePage extends BaseElement {
+class BasePage {
 
 	constructor() {
-		super();
+		this.commonElement = $(`#app`);
 	}
 
-	async confirmPage(element) {
-		await expect(element).toBeExisting();
+	async goToURL(url) {
+		await browser.url(url);
 	}
 	async currentElement(locator, name) {
-		return new BaseElement(await locator, undefined, await name);
-	}
-	async currentElements(locators, name) {
-		return new BaseElement(undefined, await locators, await name);
+		return new BaseElement(locator, name);
 	}
 
 }
