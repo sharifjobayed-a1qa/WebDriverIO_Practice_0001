@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//*[contains(@class,'icon icon-check checkbox__check')]\"}\n  (Session info: chrome=123.0.6312.106)",
-  "stacktrace": "\tGetHandleVerifier [0x00007FF664FA7032+63090]\n\t(No symbol) [0x00007FF664F12C82]\n\t(No symbol) [0x00007FF664DAEC65]\n\t(No symbol) [0x00007FF664DF499D]\n\t(No symbol) [0x00007FF664DF4ADC]\n\t(No symbol) [0x00007FF664E35B37]\n\t(No symbol) [0x00007FF664E1701F]\n\t(No symbol) [0x00007FF664E33412]\n\t(No symbol) [0x00007FF664E16D83]\n\t(No symbol) [0x00007FF664DE83A8]\n\t(No symbol) [0x00007FF664DE9441]\n\tGetHandleVerifier [0x00007FF6653A25AD+4238317]\n\tGetHandleVerifier [0x00007FF6653DF70D+4488525]\n\tGetHandleVerifier [0x00007FF6653D79EF+4456495]\n\tGetHandleVerifier [0x00007FF665080576+953270]\n\t(No symbol) [0x00007FF664F1E54F]\n\t(No symbol) [0x00007FF664F19224]\n\t(No symbol) [0x00007FF664F1935B]\n\t(No symbol) [0x00007FF664F09B94]\n\tBaseThreadInitThunk [0x00007FFBA739257D+29]\n\tRtlUserThreadStart [0x00007FFBA890AA58+40]\n"
-}

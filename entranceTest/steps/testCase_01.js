@@ -24,7 +24,7 @@ When(`I input random valid password, email, accept TOU & press next button`, asy
 	registrationPage = new RegistrationPage();
 	await expect(registrationPage.commonElement).toBeExisting();
 	await registrationPage.acceptCookies();
-	await registrationPage.enterCredentialsAndPressNext();
+	await registrationPage.enterCredentialsAndPressNext(`0-Password-0`, `somebody`, `yopmail`);
 
 });
 Then(`The '2' card is open`, async() => {
@@ -36,5 +36,10 @@ Then(`The '2' card is open`, async() => {
 When(`I Choose 3 random interests`, async() => {
 	await profilePage.click3Interests(0, 2);
 });
-When(`I click "Next" button`, async() => {});
-Then(`The text 'Please upload a picture' appear & it's text color is green`, async() => {});
+When(`I click Next button`, async() => {
+	await profilePage.clickNextBtn();
+});
+Then(`The text 'Please upload a picture' appear & it's text color is green`, async() => {
+	await expect(await profilePage.picUploadWarningText()).toEqual(`Please upload a picture`);
+	await expect(await profilePage.picUploadWarningTextColor()).toEqual(`rgba(41,197,102,1)`);
+});

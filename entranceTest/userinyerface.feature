@@ -7,14 +7,13 @@ Feature: Userinyerface test
 
   Background:
     Given I'm on the Home page
-
   Scenario: Test Case 01
     When I click the HERE link
     Then The '1' card is open
     When I input random valid password, email, accept TOU & press next button
     Then The '2' card is open
     When I Choose 3 random interests
-    And I click "Next" button
+    And I click Next button
     Then The text 'Please upload a picture' appear & it's text color is green
 
   Scenario: Test Case 02

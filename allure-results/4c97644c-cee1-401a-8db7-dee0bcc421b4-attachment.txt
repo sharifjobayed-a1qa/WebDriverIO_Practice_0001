@@ -1,5 +1,0 @@
-{
-  "error": "no such element",
-  "message": "no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//h2[normalize-space()='This is me']\"}\n  (Session info: chrome=123.0.6312.106)",
-  "stacktrace": "\tGetHandleVerifier [0x00007FF7B0E47032+63090]\n\t(No symbol) [0x00007FF7B0DB2C82]\n\t(No symbol) [0x00007FF7B0C4EC65]\n\t(No symbol) [0x00007FF7B0C9499D]\n\t(No symbol) [0x00007FF7B0C94ADC]\n\t(No symbol) [0x00007FF7B0CD5B37]\n\t(No symbol) [0x00007FF7B0CB701F]\n\t(No symbol) [0x00007FF7B0CD3412]\n\t(No symbol) [0x00007FF7B0CB6D83]\n\t(No symbol) [0x00007FF7B0C883A8]\n\t(No symbol) [0x00007FF7B0C89441]\n\tGetHandleVerifier [0x00007FF7B12425AD+4238317]\n\tGetHandleVerifier [0x00007FF7B127F70D+4488525]\n\tGetHandleVerifier [0x00007FF7B12779EF+4456495]\n\tGetHandleVerifier [0x00007FF7B0F20576+953270]\n\t(No symbol) [0x00007FF7B0DBE54F]\n\t(No symbol) [0x00007FF7B0DB9224]\n\t(No symbol) [0x00007FF7B0DB935B]\n\t(No symbol) [0x00007FF7B0DA9B94]\n\tBaseThreadInitThunk [0x00007FFBA739257D+29]\n\tRtlUserThreadStart [0x00007FFBA890AA58+40]\n"
-}
