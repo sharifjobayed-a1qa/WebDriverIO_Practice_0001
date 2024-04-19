@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//button[@class='button button--solid button--blue help-form__send-to-bottom-button']"
-}

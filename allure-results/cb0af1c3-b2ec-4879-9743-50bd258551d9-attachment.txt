@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//div[@class='help-form__container']"
-}

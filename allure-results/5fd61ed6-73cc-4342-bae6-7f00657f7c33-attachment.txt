@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//li[normalize-space()='Please upload a picture']"
-}

@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//label[@for='interest_unselectall']//span[@class='checkbox__box']"
-}
