@@ -1,6 +1,5 @@
 import { Given, Then, When,  } from "@wdio/cucumber-framework";
 import {expect} from '@wdio/globals';
-import BasePage from "../pages/basePage.js";
 import MainPage from "../pages/mainPage.js";
 import RegistrationPage from "../pages/registrationPage.js";
 import ProfilePage from "../pages/profilePage.js";
@@ -31,15 +30,15 @@ Then(`The '2' card is open`, async() => {
 	profilePage = new ProfilePage();
 	await (await profilePage.cardNumber()).waitUntillElementVisible();
 	await expect(profilePage.commonElement).toBeExisting();
-	await expect(await $(`//div[@class='page-indicator']`)).toBeDisplayed();
+	await expect($(`//div[@class='page-indicator']`)).toBeDisplayed();
 });
 When(`I Choose 3 random interests`, async() => {
-	await profilePage.click3Interests(0, 2);
+	await profilePage.click3Interests(0, 3);
 });
 When(`I click Next button`, async() => {
 	await profilePage.clickNextBtn();
 });
-Then(`The text 'Please upload a picture' appear & it's text color is green`, async() => {
-	await expect(await profilePage.picUploadWarningText()).toEqual(`Please upload a picture`);
+Then(`The text {string} appear & it's text color is green`, async(string) => {
+	await expect(await profilePage.picUploadWarningText()).toEqual(string);
 	await expect(await profilePage.picUploadWarningTextColor()).toEqual(`rgba(41,197,102,1)`);
 });
