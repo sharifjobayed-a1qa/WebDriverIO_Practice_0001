@@ -6,41 +6,42 @@ class BaseElement {
 	constructor(locator, name) {
 		this.locator = locator;
 		this.name = name;
-		return this;
 	}
 
-	get elLocator() {
-		return $(this.locator);
+	async elLocator() {
+		const element = await $(this.locator);
+		return element;
 	}
-	get elLocators() {
-		return $$(this.locator);
+	async elLocators(index) {
+		const element = await $$(this.locator);
+		return element[index];
 	}
 
 	async doClick() {
-		await this.elLocator.click();
+		await (await this.elLocator()).click();
 	}
 	async clearAndType(value) {
-		await this.elLocator.clearValue();
-		await this.elLocator.addValue(value);
+		await (await this.elLocator()).clearValue();
+		await (await this.elLocator()).addValue(value);
 	}
 	async waitUntillElementVisible() {
-		await this.elLocator.waitForDisplayed({timeout:15000});
+		await (await this.elLocator()).waitForDisplayed({timeout:15000});
 	}
 	async scrollToPosition (){
-		await this.elLocator.scrollIntoView();
+		await (await this.elLocator()).scrollIntoView();
 	}
 	async elementText() {
-		return this.elLocator.getText();
+		return (await this.elLocator()).getText();
 	}
 	async elementExistence() {
-		return this.elLocator.isExisting();
+		return (await this.elLocator()).isExisting();
 	}
 	async elementTextColor (){
-		return await this.elLocator.getCSSProperty('color').then(p => p.value);
+		return (await this.elLocator()).getCSSProperty('color').then(p => p.value);
 	}
 	async waitUntilInvisible(ms) {
 		browser.waitUntil(() => {
-			return !this.elLocator.isDisplayed();
+			return !this.elLocator().then(p=>{if(!p) return true})
 		}, {
 			timeout: ms,
 			timeoutMsg: 'Element did not disappear within 15 seconds',

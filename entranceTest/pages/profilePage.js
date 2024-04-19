@@ -24,6 +24,7 @@ class ProfilePage extends BasePage {
 			}
 		}
 	}
+
 	async clickNextBtn() {
 		await (await this.currentElement(`//button[normalize-space()='Next']`, `Next button on the profile page`)).doClick();
 	}
