@@ -33,7 +33,7 @@ Then(`The '2' card is open`, async() => {
 	await expect($(`//div[@class='page-indicator']`)).toBeDisplayed();
 });
 When(`I Choose 3 random interests`, async() => {
-	await profilePage.click3Interests(0, 3);
+	await profilePage.clickNumbersOfInterests(3);
 });
 When(`I click Next button`, async() => {
 	await profilePage.clickNextBtn();
