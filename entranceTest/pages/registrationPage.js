@@ -8,30 +8,30 @@ class RegistrationPage extends BasePage {
 	}
 
 	async acceptCookies() {
-		await (await this.currentElement(`//button[normalize-space()='Not really, no']`, `Cookies accept button`)).doClick();
+		await (await this.currentElement(`//button[normalize-space()='Not really, no']`)).doClick();
 	}
 	async enterCredentialsAndPressNext(password, userName, domain) {
-		await (await this.currentElement(`//input[@placeholder='Choose Password']`, `Password field`)).clearAndType(password);
-		await (await this.currentElement(`//input[@placeholder='Your email']`, `Email field`)).clearAndType(userName);
-		await (await this.currentElement(`//input[@placeholder='Domain']`, `Domain field`)).clearAndType(domain);
-		await (await this.currentElement(`//span[@class='icon icon-chevron-down']`, `Suffix dropdown arrow`)).doClick();
-		await (await this.currentElement(`//*[contains(@class,'dropdown__list')][1]`, `Suffix list`)).waitUntillElementVisible();
-		await (await this.currentElement(`//div[normalize-space()='.com']`, `.com suffix`)).scrollToPosition();
-		await (await this.currentElement(`//div[normalize-space()='.com']`, `.com suffix`)).doClick();
-		await (await this.currentElement(`//span[@class='icon icon-check checkbox__check']`, `Terms & Conditions checkbox`)).doClick();
-		await (await this.currentElement(`//a[@class='button--secondary']`, `Next button on the registration page`)).doClick();
+		await (await this.currentElement(`//input[@placeholder='Choose Password']`)).clearAndType(password);
+		await (await this.currentElement(`//input[@placeholder='Your email']`)).clearAndType(userName);
+		await (await this.currentElement(`//input[@placeholder='Domain']`)).clearAndType(domain);
+		await (await this.currentElement(`//span[@class='icon icon-chevron-down']`)).doClick();
+		await (await this.currentElement(`//*[contains(@class,'dropdown__list')][1]`)).waitUntillElementVisible();
+		await (await this.currentElement(`//div[normalize-space()='.com']`)).scrollToPosition();
+		await (await this.currentElement(`//div[normalize-space()='.com']`)).doClick();
+		await (await this.currentElement(`//span[@class='icon icon-check checkbox__check']`)).doClick();
+		await (await this.currentElement(`//a[@class='button--secondary']`)).doClick();
 	}
 	async hideHelpBox() {
-		await (await this.currentElement(`//button[@class='button button--solid button--blue help-form__send-to-bottom-button']`, `HelpBox hide button`)).doClick();
+		await (await this.currentElement(`//button[@class='button button--solid button--blue help-form__send-to-bottom-button']`)).doClick();
 	}
 	async checkHelpBoxVisibility(value) {
-		await (await this.currentElement(`//div[@class='help-form__container']`, `HelpBox container`)).waitUntilInvisible(value);
+		await (await this.currentElement(`//div[@class='help-form__container']`)).waitUntilInvisible(value);
 	}
 	async firstWarningText() {
-		return (await this.currentElement(`//div[normalize-space()='Your password requires at least 10 characters.']`, `First form warning`)).elementText();
+		return (await this.currentElement(`//div[normalize-space()='Your password requires at least 10 characters.']`)).elementText();
 	}
 	async jsTimerStartCount() {
-		return (await this.currentElement(`//div[@class='timer timer--white timer--center']`, `JS timer`)).elementText();
+		return (await this.currentElement(`//div[@class='timer timer--white timer--center']`)).elementText();
 	}
 
 }

@@ -3,18 +3,17 @@ import {$, $$} from '@wdio/globals';
 
 class BaseElement {
 
-	constructor(locator, name) {
+	constructor(locator) {
 		this.locator = locator;
-		this.name = name;
 	}
 
 	async elLocator() {
 		const element = await $(this.locator);
 		return element;
 	}
-	async elLocators(index) {
+	async elLocators() {
 		const element = await $$(this.locator);
-		return element[index];
+		return element;
 	}
 
 	async doClick() {

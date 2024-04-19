@@ -11,7 +11,7 @@ class MainPage extends BasePage {
 		await this.goToURL(`https://userinyerface.com/`);
 	}
 	async clickHERELink() {
-		await (await this.currentElement(`//a[@class='start__link']`, `HERE link`)).doClick();
+		await (await this.currentElement(`//a[@class='start__link']`)).doClick();
 	}
 
 }
