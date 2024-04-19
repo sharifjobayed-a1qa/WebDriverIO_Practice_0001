@@ -8,14 +8,13 @@ class BasePage {
     async goToURL(url) {
         await browser.url(url);
     }
-
     async currentElement(locator) {
-        return new BaseElement(locator);
+		return new BaseElement(locator);
     }
-
     async currentElements(locator) {
-        return $$(locator).map(element => new BaseElement(element));
-    }
+		return await new BaseElement(locator).elLocators();
+	}
+	
 }
 
 export default BasePage;

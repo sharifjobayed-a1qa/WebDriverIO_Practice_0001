@@ -17,10 +17,10 @@ class ProfilePage extends BasePage {
         const randNum = Math.floor(Math.random() * checkBoxes.length);
         if (checkBoxes[randNum] && typeof checkBoxes[randNum].isSelected === 'function') {
             if(await checkBoxes[randNum].isSelected()){
-                checkBoxes[randNum + 1].doClick();
+                checkBoxes[randNum + 1].click();
                 expect(checkBoxes[randNum + 1]).toBeSelected();
             } else {
-                checkBoxes[randNum].doClick();
+                checkBoxes[randNum].click();
                 expect(checkBoxes[randNum]).toBeSelected();
             }
         }

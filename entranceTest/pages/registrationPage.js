@@ -15,7 +15,7 @@ class RegistrationPage extends BasePage {
 		await (await this.currentElement(`//input[@placeholder='Your email']`)).clearAndType(userName);
 		await (await this.currentElement(`//input[@placeholder='Domain']`)).clearAndType(domain);
 		await (await this.currentElement(`//span[@class='icon icon-chevron-down']`)).doClick();
-		await (await this.currentElement(`//*[contains(@class,'dropdown__list')][1]`)).waitUntillElementVisible();
+		await (await this.currentElement(`//*[contains(@class,'dropdown__list')][1]`)).waitUntilElementVisible();
 		await (await this.currentElement(`//div[normalize-space()='.com']`)).scrollToPosition();
 		await (await this.currentElement(`//div[normalize-space()='.com']`)).doClick();
 		await (await this.currentElement(`//span[@class='icon icon-check checkbox__check']`)).doClick();

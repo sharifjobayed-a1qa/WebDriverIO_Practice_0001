@@ -28,7 +28,7 @@ When(`I input random valid password, email, accept TOU & press next button`, asy
 });
 Then(`The '2' card is open`, async() => {
 	profilePage = new ProfilePage();
-	await (await profilePage.cardNumber()).waitUntillElementVisible();
+	await (await profilePage.cardNumber()).waitUntilElementVisible();
 	await expect(profilePage.commonElement).toBeExisting();
 	await expect($(`//div[@class='page-indicator']`)).toBeDisplayed();
 });
