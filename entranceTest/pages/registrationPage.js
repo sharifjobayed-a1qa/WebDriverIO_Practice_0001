@@ -30,6 +30,9 @@ class RegistrationPage extends BasePage {
 	async firstWarningText() {
 		return (await this.currentElement(`//div[normalize-space()='Your password requires at least 10 characters.']`, `First form warning`)).elementText();
 	}
+	async jsTimerStartCount() {
+		return (await this.currentElement(`//div[@class='timer timer--white timer--center']`, `JS timer`)).elementText();
+	}
 
 }
 
