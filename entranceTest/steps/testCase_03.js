@@ -1,4 +1,4 @@
-import { Given, Then, When } from "@wdio/cucumber-framework";
+import { Then, When } from "@wdio/cucumber-framework";
 import {expect} from '@wdio/globals';
 import MainPage from "../pages/mainPage.js";
 import RegistrationPage from "../pages/registrationPage.js";
