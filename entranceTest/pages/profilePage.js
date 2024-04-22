@@ -1,3 +1,4 @@
+import BaseElement from "./baseElement.js";
 import BasePage from "./basePage.js";
 
 
@@ -5,35 +6,36 @@ class ProfilePage extends BasePage {
 
 	constructor() {
 		super();
+		this.cardNumber = new BasePage(`//div[@class='page-indicator']`, `Card number element`);
+		this.interestCheckboxes = new BaseElement(`//*[contains(@class,'icon icon-check checkbox__check')]`, `Interest checkboxes`).elLocators();
+		this.unselectAllCheckbox = new BaseElement(`//label[@for='interest_unselectall']//span[@class='checkbox__box']`, `Unselect all checkbox`);
+		this.nextBtn = new BaseElement(`//button[normalize-space()='Next']`, `Next button`);
+		this.picUploadWarning = new BaseElement(`//li[normalize-space()='Please upload a picture']`, `Pic upload warning`);		
 	}
 
-	async cardNumber() {
-		return this.currentElement(`//div[@class='page-indicator']`)
-	}
 	async clickNumbersOfInterests(interests) {
-    const checkBoxes = await this.currentElements(`//*[contains(@class,'icon icon-check checkbox__check')]`);
-    await (await this.currentElement(`//label[@for='interest_unselectall']//span[@class='checkbox__box']`)).doClick();
+    await this.unselectAllCheckbox.doClick();
     for(let i = 0; i < interests; i++) {
-        const randNum = Math.floor(Math.random() * checkBoxes.length);
-        if (checkBoxes[randNum] && typeof checkBoxes[randNum].isSelected === 'function') {
-            if(await checkBoxes[randNum].isSelected()){
-                checkBoxes[randNum + 1].click();
-                expect(checkBoxes[randNum + 1]).toBeSelected();
+        const randNum = Math.floor(Math.random() * this.interestCheckboxes.length);
+        if (this.interestCheckboxes[randNum] && typeof this.interestCheckboxes[randNum].isSelected === 'function') {
+            if(await this.interestCheckboxes[randNum].isSelected()){
+                this.interestCheckboxes[randNum + 1].click();
+                expect(this.interestCheckboxes[randNum + 1]).toBeSelected();
             } else {
-                checkBoxes[randNum].click();
-                expect(checkBoxes[randNum]).toBeSelected();
+                this.interestCheckboxes[randNum].click();
+                expect(this.interestCheckboxes[randNum]).toBeSelected();
             }
         }
     }
 	}
 	async clickNextBtn() {
-		await (await this.currentElement(`//button[normalize-space()='Next']`)).doClick();
+		await this.nextBtn.doClick();
 	}
 	async picUploadWarningText() {
-		return (await this.currentElement(`//li[normalize-space()='Please upload a picture']`)).elementText();
+		return this.picUploadWarning.elementText();
 	}	
 	async picUploadWarningTextColor() {
-		return (await this.currentElement(`//li[normalize-space()='Please upload a picture']`)).elementTextColor();
+		return await this.picUploadWarning.elementTextColor();
 	}
 	
 }

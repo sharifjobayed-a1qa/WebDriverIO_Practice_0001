@@ -1,3 +1,4 @@
+import BaseElement from "./baseElement.js";
 import BasePage from "./basePage.js";
 
 
@@ -5,33 +6,46 @@ class RegistrationPage extends BasePage {
 
 	constructor() {
 		super();
+		this.acceptCookiesBtn = new BaseElement(`//button[normalize-space()='Not really, no']`, `Accept cookies button`);
+		this.passwordField = new BaseElement(`//input[@placeholder='Choose Password']`, `Password field`);
+		this.userNameField = new BaseElement(`//input[@placeholder='Your email']`, `Username field`);
+		this.domainField = new BaseElement(`//input[@placeholder='Domain']`, `Domain field`);
+		this.suffixDropdownArrow = new BaseElement(`//span[@class='icon icon-chevron-down']`, `Suffix dropdown arrow`);
+		this.suffixList = new BaseElement(`//*[contains(@class,'dropdown__list')][1]`, `Suffix list`);
+		this.dotComSuffix = new BaseElement(`//div[normalize-space()='.com']`, `Dot com suffix`);
+		this.tNCCheckbox = new BaseElement(`//span[@class='icon icon-check checkbox__check']`, `Terms of conditions checkbox`);
+		this.nextBtn = new BaseElement(`//a[@class='button--secondary']`, `Next button`);
+		this.helpBoxMinimizeArrow = new BaseElement(`//button[@class='button button--solid button--blue help-form__send-to-bottom-button']`, `Help box minimize arrow`);
+		this.formContainer = new BaseElement(`//div[@class='help-form__container']`, `Form container`);
+		this.formWarning = new BaseElement(`//div[normalize-space()='Your password requires at least 10 characters.']`, `Form warning text`);
+		this.jsCounter = new BaseElement(`//div[@class='timer timer--white timer--center']`, `JS counter`);
 	}
 
 	async acceptCookies() {
-		await (await this.currentElement(`//button[normalize-space()='Not really, no']`)).doClick();
+		await this.acceptCookiesBtn.doClick();
 	}
 	async enterCredentialsAndPressNext(password, userName, domain) {
-		await (await this.currentElement(`//input[@placeholder='Choose Password']`)).clearAndType(password);
-		await (await this.currentElement(`//input[@placeholder='Your email']`)).clearAndType(userName);
-		await (await this.currentElement(`//input[@placeholder='Domain']`)).clearAndType(domain);
-		await (await this.currentElement(`//span[@class='icon icon-chevron-down']`)).doClick();
-		await (await this.currentElement(`//*[contains(@class,'dropdown__list')][1]`)).waitUntilElementVisible();
-		await (await this.currentElement(`//div[normalize-space()='.com']`)).scrollToPosition();
-		await (await this.currentElement(`//div[normalize-space()='.com']`)).doClick();
-		await (await this.currentElement(`//span[@class='icon icon-check checkbox__check']`)).doClick();
-		await (await this.currentElement(`//a[@class='button--secondary']`)).doClick();
+		await this.passwordField.clearAndType(password);
+		await this.userNameField.clearAndType(userName);
+		await this.domainField.clearAndType(domain);
+		await this.suffixDropdownArrow.doClick();
+		await this.suffixList.waitUntilElementVisible();
+		await this.dotComSuffix.scrollToPosition();
+		await this.dotComSuffix.doClick();
+		await this.tNCCheckbox.doClick();
+		await this.nextBtn.doClick();
 	}
 	async hideHelpBox() {
-		await (await this.currentElement(`//button[@class='button button--solid button--blue help-form__send-to-bottom-button']`)).doClick();
+		await this.helpBoxMinimizeArrow.doClick();
 	}
 	async checkHelpBoxVisibility(value) {
-		await (await this.currentElement(`//div[@class='help-form__container']`)).waitUntilInvisible(value);
+		await this.formContainer.waitUntilInvisible(value);
 	}
 	async firstWarningText() {
-		return (await this.currentElement(`//div[normalize-space()='Your password requires at least 10 characters.']`)).elementText();
+		return this.formWarning.elementText();
 	}
 	async jsTimerStartCount() {
-		return (await this.currentElement(`//div[@class='timer timer--white timer--center']`)).elementText();
+		return this.jsCounter.elementText();
 	}
 
 }

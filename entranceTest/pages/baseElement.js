@@ -1,17 +1,20 @@
 import {$, $$} from '@wdio/globals';
 
 class BaseElement {
-    constructor(locator) {
+    constructor(locator, name) {
         this.locator = locator;
+        this.name = name;
     }
 
     async elLocator() {
         const element = await $(this.locator);
+        const name = await this.name;
         return element;
     }
 
     async elLocators() {
         const elements = await $$(this.locator);
+        const name = await this.name;
         return elements;
     }
 
@@ -23,10 +26,6 @@ class BaseElement {
         const element = await this.elLocator();
         await element.clearValue();
         await element.addValue(value);
-    }
-
-    async waitUntilElementVisible() {
-        await (await this.elLocator()).waitForDisplayed({timeout: 15000});
     }
 
     async scrollToPosition() {
@@ -43,6 +42,10 @@ class BaseElement {
 
     async elementTextColor() {
         return (await this.elLocator()).getCSSProperty('color').then(p => p.value);
+    }
+
+    async waitUntilElementVisible() {
+        await (await this.elLocator()).waitForDisplayed({timeout: 15000});
     }
 
     async waitUntilInvisible(ms) {

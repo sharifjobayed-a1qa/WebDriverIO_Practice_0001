@@ -22,7 +22,7 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './entranceTest/**.feature',
+        'entranceTest/**.feature',
     ],
     // Patterns to exclude.
     exclude: [
@@ -61,7 +61,7 @@ export const config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'warn',
+    logLevel: 'info',
     //
     // Set specific log levels per logger
     // loggers:
@@ -129,7 +129,7 @@ export const config = {
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./entranceTest/steps/**.js'],
+        require: ['entranceTest/steps/*.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
